@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[Blog_Insert] 
+  @Name nvarchar(max), 
+  @Url nvarchar(max) 
+AS 
+BEGIN
+  INSERT INTO [dbo].[Blogs] ([Name], [Url])
+  VALUES (@Name, @Url)
+
+  SELECT SCOPE_IDENTITY() AS BlogId
+END 
